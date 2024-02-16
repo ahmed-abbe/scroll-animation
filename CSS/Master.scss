@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    background-color: #111;
+    font-family: "Arial", "Helvetica", "sans-serif";
+}
+section {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-size: 1.8em;
+    color: rgba(white, 0.8);
+}
+article p {
+    width: fit-content;
+    margin: 15px auto;
+    font-size: 10em;
+    font-weight: bold;
+    color: rgba(white, 0.3);
+    position: relative;
+    cursor: default;
+}
+article p::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0%;
+    color: white;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition: width 1s;
+}
+article p.current::before {
+    color: #5ad65f;
+}
+article p.show::before {
+    width: 100%;
+}
